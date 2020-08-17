@@ -183,7 +183,7 @@ class Blockchain {
      */
     getBlockByHash(hash) {
         // From O(n) to O(1) \o/
-        return this.getBlockByHeight(self.indexHashToHeight[hash]);
+        return this.getBlockByHeight(this.indexHashToHeight[hash]);
     }
 
     /**
