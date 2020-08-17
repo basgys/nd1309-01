@@ -252,7 +252,7 @@ class Blockchain {
         const self = this;
         return new Promise(async (resolve, _) => {
             const errorLog = [];
-            const previousBlockHash = null;
+            let previousBlockHash = null;
             for (var i = 0; i < self.chain.length-1; i++) {
                 const block = await self.getBlockByHeight(i);
                 // Ensure block is valid
