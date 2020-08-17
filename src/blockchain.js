@@ -217,7 +217,10 @@ class Blockchain {
             const stars = await Promise.all(heights.map(async (h) => {
                 const block = await self.getBlockByHeight(h);
                 const star = await block.getBData();
-                return star;
+                return {
+                    "owner": address,
+                    "star": star
+                };
             }));
             resolve(stars);
         });
